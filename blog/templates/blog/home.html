@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% for post in posts %}
+<div class="post">
+	<div>
+		<h4 class="post-title">{{ post.title }} </h4>
+	</div>
+	<div class="postbody">
+
+		<div name="neofetch">
+			<div class="logo">
+				<img src="{{ post.author.profile.image.url }}" alt="">
+			</div>
+			<div class="info">
+				Date posted: {{ post.date_posted }} <br>
+				Problem: {{ post.problem }} <br>
+
+				What does it do?: {{ post.use }} <br>
+
+			</div>
+		</div>
+		<div class="postlines">
+			<span class="username">{{ post.author }}@castle-murray.com[~/{{ post.context}}] # </span>
+			<pre class="post-content">{{ post.content }}</pre>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock content %}
