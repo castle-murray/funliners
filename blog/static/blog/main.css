@@ -1,9 +1,12 @@
 body {
-    color: antiquewhite;
+    color: rgb(252, 185, 97);
+}
+.background {
+    background-image: url("bg.jpg");
+    background-attachment: fixed;
 }
 .main-div {
     padding-top: 50px;    
-    color: antiquewhite;
     font-family: monospace;
     width: 80%;
     margin: auto;
@@ -40,7 +43,6 @@ body {
     margin: none;
     background-color: rgba(0, 34, 39, 0.479);
     border-style: solid;
-    color: antiquewhite;
     margin-bottom: 40px;
     border: solid;
     border-width: 1px;
@@ -75,7 +77,6 @@ pre {
 }
 .postbody{
     background-color: rgba(0, 0, 34, 0.4);
-    color: bisque;
     margin-top: none;
     padding: 5px;
     line-height: 1.2;
