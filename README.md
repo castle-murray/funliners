@@ -1,2 +1,0 @@
-# funliners
-Oneliner share site. 
