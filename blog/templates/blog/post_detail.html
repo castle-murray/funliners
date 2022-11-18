@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="post">
+    <div class="post-title">
+        <div class="post-title-head">
+            <h3>{{ post.title }} </h3>
+        </div>
+        <div class="post-title-right"><a href="{% url 'post-update' post.id %}">Edit</a></div>
+
+    </div>
+    <div class="post-detail">
+
+        <div name="neofetch">
+            <div class="logo">
+                <img src="{{ post.author.profile.image.url }}" alt="">
+            </div>
+            <div class="info">
+                Date posted: {{ post.date_posted }} <br>
+                Problem: {{ post.problem }} <br>
+
+                What does it do?: {{ post.use }} <br>
+
+            </div>
+        </div>
+        <div class="postlines">
+            <span class="username">{{ post.author }}@castle-murray.com[~/{{ post.context}}] # </span>
+            <pre class="post-content">{{ post.content }}</pre>
+        </div>
+    </div>
+</div>
+{% endblock content %}
