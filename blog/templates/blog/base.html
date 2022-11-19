@@ -25,7 +25,7 @@
 
 <body class="background">
     <div class="header sticky">
-        Welcome to <a href="{% url 'blog-home' %}">Castle-Murray</a>
+        Hello {{ user.username }}, welcome to <a href="{% url 'blog-home' %}">Castle-Murray</a>
 
         {% if user.is_authenticated %}
         <div class="header-center">
@@ -40,7 +40,7 @@
         {% else %}
         <div class="header-right">
             <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'user-registration' %}">register</a>
+            <a href="{% url 'user-registration' %}">Register</a>
         </div>
         {% endif %}
 
