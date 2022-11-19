@@ -69,7 +69,7 @@ pre {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 .post-title {
-    width: 100%;
+    width: 95%;
     display: inline-flex;
     flex-flow: row;
     justify-content: space-between;
@@ -94,7 +94,7 @@ pre {
 }
 .post-title-right {
     display: inline;
-    padding-right: 30px;
+    padding-right: 0px;
 }
 .post-title-head {
 }
