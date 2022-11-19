@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d(+r-a&z3#+ki^)0ly*3c^$^_y6o(x^fk-$+_5a&iu+2in+++@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dev.castle-murray.com']
 
 
 # Application definition
@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'funliners.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/home/linuxg10/dev/my.cnf',
+        },
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -123,7 +123,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = '/home/linuxg10/dev/public/static/'
+MEDIA_ROOT = '/home/linuxg10/dev/public/media/' 
 
 MEDIA_URL = '/media/'
 # Default primary key field type
