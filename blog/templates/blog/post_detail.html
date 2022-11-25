@@ -26,6 +26,34 @@
             <span class="username">{{ post.author }}@castle-murray.com[~/{{ post.context}}] # </span>
             <pre class="post-content">{{ post.content }}</pre>
         </div>
+        <div>
+            {% for comment in post.comments.all %}
+            <span class="username">{{ comment.user }}@castle-murray.com[~/{{ post.context}}] # </span>
+            <pre class="post-content">{{ comment.content }}</pre>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="post">
+    <div class="post-title">
+        <div class="post-title-head">
+            <h3>Add a comment</h3>
+        </div>
+    </div>
+    <div class="post-detail">
+        <div class="comment-form">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset>
+                    {{ form.as_p }}
+                </fieldset>
+                <div>
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock content %}
