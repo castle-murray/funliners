@@ -15,7 +15,8 @@
                     type="submit" name="post_id" value="{{ post.id }}">&#60;3</button></form>
             {% endif %}
             {% else %}
-            <span>&#60;3</span>
+            <a class="like-button-no" href="{% url 'login' %}">&#60;3</a>
+            {% endif %}
             :{{ object.total_likes }}
             <a href="{% url 'post-update' post.id %}">Edit</a>
         </div>
