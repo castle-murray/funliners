@@ -4,6 +4,7 @@
 <div class="post">
 	<div class="post-title">
 		<a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+		<span>L:{{ post.total_likes }} | C:{{ post.comments.count }}</span>
 	</div>
 	<div class="postbody">
 

@@ -125,7 +125,37 @@ pre {
     display: inline;
     padding-right: 0px;
 }
+.post-title-right form {
+    display: inline;
+}
+.post-title-right a {
+    display: inline;
+}
+.post-title-right span {
+    display: inline;
+    padding-left: 2px;
+    padding-right: 10px;
+}
 .post-title-head {
+}
+.like-button-no {
+    border: none;
+    color: rgb(252, 185, 97);
+    background-color: rgba(255, 255, 255, 0);
+    padding: none;
+    margin: none;
+    transition: 0.5s;
+}
+.like-button-yes {
+    border: none;
+    color: red;
+    background-color: rgba(255, 255, 255, 0);
+    padding: none;
+    margin: none;
+    transition: 0.5s;
+}
+.like-button-no:hover {
+    color: red;
 }
 .username {
     color: aqua;
