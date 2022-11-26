@@ -46,9 +46,7 @@
         <div class="comment-form">
             <form method="POST">
                 {% csrf_token %}
-                <fieldset>
-                    {{ form.as_p }}
-                </fieldset>
+                {{ form }}
                 <div>
                     <button type="submit">Post</button>
                 </div>

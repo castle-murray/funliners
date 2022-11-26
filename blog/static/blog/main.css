@@ -69,6 +69,22 @@ body {
     transition: 0.5s;
     backdrop-filter: blur(15px);
 }
+.comment-form {
+    border: none;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    color: rgb(252, 185, 97);
+    resize: none;
+    border-style: none;
+}
+.comment-form:focus {
+    border: none;
+    outline: none;
+}
+
 .post:hover {
     border-color: rgba(0, 255, 255, 0.473);
     background-color: rgba(0, 34, 39, 0.8);
