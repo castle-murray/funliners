@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="postlines">
-            <span class="username">{{ post.author }}@castle-murray.com[~/{{ post.context}}] # </span>
+            <span class="username"><a href="{% url 'user-posts' post.author %}">{{ post.author }}@castle-murray.com</a>[~/{{ post.context}}] # </span>
             <pre class="post-content">{{ post.content }}</pre>
         </div>
         <div>
