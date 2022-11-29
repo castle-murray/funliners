@@ -49,13 +49,13 @@
         </div>
     </div>
 </div>
-
 <div class="post">
     <div class="post-title">
         <div class="post-title-head">
             <h3>Add a comment</h3>
         </div>
     </div>
+    {% if user.is_authenticated %}
     <div class="post-detail">
         <div class="comment-form">
             <form method="POST">
@@ -64,8 +64,14 @@
                 <div>
                     <button type="submit">Post</button>
                 </div>
+                {%else %}
+                <div class="post-detail">
+                    <a href="{% url 'login' %} ">Login to comment.</a>
+                </div>
+                {% endif %}
             </form>
         </div>
     </div>
 </div>
+
 {% endblock content %}

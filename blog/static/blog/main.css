@@ -2,6 +2,10 @@ body {
     color: rgb(252, 185, 97);
     font-family: monospace;
 }
+a {
+    color: aqua;
+    text-decoration: none;
+}
 .background {
     background-image: url("bg.jpg");
     background-attachment: fixed;
@@ -110,8 +114,27 @@ pre {
     border-top-left-radius: 6px;
     backdrop-filter: blur(15px);
 }
-
-.post-title a {
+.page-bar {
+    width: 50%;
+    display: inline-flex;
+    background-color: rgba(0, 29, 34, 0.781);
+    flex-flow: row;
+    justify-content: space-between;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 2px;
+    padding-left: 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(15px);
+}
+.page-bar a {
+    color: rgb(252, 185, 97);
+    transition: 0.5s;
+}
+.page-bar a:hover {
+    color: rgb(0, 175, 175);
+}
+.page-bar a {
     color: rgb(252, 185, 97);
     transition: 0.5s;
 }
@@ -182,6 +205,9 @@ pre {
     border-top: solid;
     border-color: rgb(54, 54, 54);
     border-width: 1px;
+}
+.post-detail a {
+    color: aqua;
 }
 .neofetch {
     height: auto;

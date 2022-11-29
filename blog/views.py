@@ -10,6 +10,7 @@ from .models import (Post, Comment)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import CommentForm
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -64,44 +65,25 @@ def LikeView(request, pk):
 
     return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
 
-# def CpostDetailView(request, pk):
-    # post = Post.objects.get(pk=pk)
-    # form = PostCommentForm(request.POST)
-#
-    # pk = request.POST.get('id')
-    # context = {
-    # 'post': post,
-    # 'form': form
-    # }
-#
-#    def form_valid(self, form):
-#        form.instance.post_id = self.kwargs['pk']
-#        form.instance.c_author = self.request.user
-#        return super().form_valid(form)
-    # if request.method == 'POST':
-    # def post(self, request, *args, **kwargs):
-    # if form.is_valid():
-    # post = self.get_object()
-    # form.instance.c_author = request.user
-    # form.instance.original_post = post
-    # form.save()
-    # return redirect(reverse("post",))
-    # return render(request, 'blog/new_post_detail.html', context)
-    # else:
-    # return render(request, 'blog/new_post_detail.html', context)
-
 
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
+    paginate_by = 5
 
-    for post in Post.objects.all():
-        print(post.comments.count)
 
-# class PostDetailView(DetailView):
-#    model = Post
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'blog/user-posts.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
