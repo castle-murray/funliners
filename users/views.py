@@ -39,3 +39,6 @@ def profile(request):
         'p_form': p_form
     }
     return render(request, 'user/profile.html', context)
+
+def password_reset_confirm(request):
+    return redirect('login')

@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% block content %}
+<h1>{{ view.kwargs.username }} has made {{ page_obj.paginator.count }} posts.</h1>
 {% for post in posts %}
 <div class="post">
 	<div class="post-title">

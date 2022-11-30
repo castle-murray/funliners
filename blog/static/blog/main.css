@@ -29,8 +29,9 @@ a {
     font-size: 18px;
   }
 .header a {
-    color: cyan;
+    color: rgb(0, 201, 201);
     padding-right: 5px;
+    transition: 0.25s;
 }
 .header-center {
     display: inline-flex;
@@ -40,7 +41,7 @@ a {
     padding-right: 30px;
 }
 .header a:hover {
-    background-color: orange;
+    color: rgb(0, 92, 92);
 }
 .sticky {
     position: fixed;
@@ -102,7 +103,7 @@ pre {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 .post-title {
-    width: 95%;
+    width: 99%;
     display: inline-flex;
     flex-flow: row;
     justify-content: space-between;
@@ -141,12 +142,19 @@ pre {
 .post-title a:hover {
     color: rgb(0, 175, 175);
 }
+.post-delete {
+    color: rgb(65, 1, 1);
+}
+.post-delete:hover {
+    color: rgb(122, 0, 0);
+}
 .post-title h3 {
     margin: 0px;
 }
 .post-title-right {
     display: inline;
-    padding-right: 0px;
+    padding-right:0px;
+    margin-right: 20px;
 }
 .post-title-right form {
     display: inline;
@@ -183,6 +191,9 @@ pre {
 .username {
     color: aqua;
 }
+.username a {
+    color: aqua;
+}
 .postbody{
     background-color: rgba(0, 0, 34, 0.4);
     margin-top: none;
@@ -190,7 +201,7 @@ pre {
     line-height: 1.2;
     max-height: 400px;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-color: black;
     border-top: solid;
     border-color: rgb(54, 54, 54);

@@ -18,7 +18,10 @@
             <a class="like-button-no" href="{% url 'login' %}">&#60;3</a>
             {% endif %}
             :{{ object.total_likes }}
-            <a href="{% url 'post-update' post.id %}">Edit</a>
+            {% if object.author == user %}
+            <a href="{% url 'post-update' post.id %}">Edit</a> 
+            <a class="post-delete" href="{% url 'post-delete' object.id %}">Delete</a>
+            {% endif %}
         </div>
 
     </div>
