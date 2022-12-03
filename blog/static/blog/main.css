@@ -144,6 +144,7 @@ pre {
 }
 .post-delete {
     color: rgb(65, 1, 1);
+    transition: 0.25s;
 }
 .post-delete:hover {
     color: rgb(122, 0, 0);
